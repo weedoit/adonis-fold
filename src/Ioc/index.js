@@ -366,6 +366,7 @@ Ioc.autoload = function (namespace, directoryPath) {
  * @public
  */
 Ioc.use = function (namespace) {
+  namespace = namespace.replace(/^(.*)@(.*)/g, 'App/Modules/$1/$2');
   const type = Ioc._type(namespace)
 
   switch (type) {
